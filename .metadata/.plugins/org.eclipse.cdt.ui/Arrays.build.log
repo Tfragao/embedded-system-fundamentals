@@ -1,0 +1,11 @@
+19:31:02 **** Incremental Build of configuration Debug for project Arrays ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Arrays.o" "..\\src\\Arrays.c" 
+..\src\Arrays.c: In function 'main':
+..\src\Arrays.c:24:7: warning: variable 'msg4' set but not used [-Wunused-but-set-variable]
+  char msg4[]  = "hello"; //(Stored in RAM)
+       ^~~~
+gcc -o Arrays.exe "src\\Arrays.o" 
+
+19:31:02 Build Finished. 0 errors, 1 warnings. (took 366ms)
+

@@ -1,0 +1,31 @@
+/*
+ ============================================================================
+ Name        : Union.c
+ Author      : Taison
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+typedef union
+{
+	uint16_t shortAddr;
+	uint32_t longAddr;
+}Address;
+
+int main(void)
+{
+
+	Address addr;
+	addr.shortAddr = 0xABCD;
+	addr.longAddr  = 0xEEEECCCC;
+	printf("Short addr = %x\n", addr.shortAddr);
+	printf("Long addr = %x\n", addr.longAddr);
+
+	return EXIT_SUCCESS;
+}

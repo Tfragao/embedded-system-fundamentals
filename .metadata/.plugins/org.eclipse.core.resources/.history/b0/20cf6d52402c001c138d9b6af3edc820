@@ -1,0 +1,29 @@
+/*
+ ============================================================================
+ Name        : 007Structure.c
+ Author      : Taison
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include<stdint.h>
+
+struct carModel
+{
+	uint32_t carNumber;
+	uint32_t carPrice;
+	uint16_t carMaxSpeed;
+	float carWeight;
+};
+
+int main(void)
+{
+
+	struct carModel BMW = {2021, 1500, 220, 1330}, Ford;
+
+	return EXIT_SUCCESS;
+}

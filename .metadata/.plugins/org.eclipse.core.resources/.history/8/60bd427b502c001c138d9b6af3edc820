@@ -1,0 +1,66 @@
+/*
+ ============================================================================
+ Name        : 007Structure.c
+ Author      : Taison
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+struct carModel
+{
+	uint32_t carNumber;
+	uint32_t carPrice;
+	uint16_t carMaxSpeed;
+	float    carWeight;
+};
+
+struct DataSet
+{
+	char data1;
+	int data2;
+	char data3;
+	short data4;
+};
+
+int main(void)
+{
+
+#if 0
+	struct carModel BMW = {2021, 1500, 220, 1330};
+	struct carModel Ford = {4031, 35000,160,1900.96};
+	struct carModel Honda = {.carMaxSpeed = 90.90, .carPrice=2000};
+
+	printf("Car details BMW :\nNumber = %d\nPrice= %d\nMaxSpeed = %d\nWeight=%f\n\n", BMW.carNumber, BMW.carPrice, BMW.carMaxSpeed, BMW.carWeight);
+	printf("Car details Ford:\nNumber = %d\nPrice= %d\nMaxSpeed = %d\nWeight=%f\n\n", Ford.carNumber, Ford.carPrice, Ford.carMaxSpeed, Ford.carWeight);
+	printf("Car details Honda:\nMaxspeed = %d\nPrice= %d\nWeight =%f\nNumber = %d\n", Honda.carMaxSpeed, Honda.carPrice, Honda.carWeight, Honda.carNumber);
+	printf("Size of structure car model is %u\n", sizeof(struct carModel));
+#endif
+
+	struct DataSet data;
+	data.data1 = 0x11;
+	data.data2 = 0xFFFFEEEE;
+	data.data3 = 0x22;
+	data.data4 = 0xABCD;
+	uint8_t *ptr;
+	ptr = (uint8_t*)&data;
+
+	uint32_t totalsize = sizeof(struct DataSet);
+
+	printf("Memory address       content \n");
+	printf("===============================\n");
+
+	for(uint32_t count = 0; count < totalsize; ++count)
+	{
+		printf("%p   %x\n", ptr, *ptr);
+		ptr++;
+	}
+
+	printf("Total memory consumed by this struct variable is %u\n", sizeof(struct DataSet));
+	return EXIT_SUCCESS;
+}

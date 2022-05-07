@@ -1,0 +1,24 @@
+15:34:25 **** Incremental Build of configuration Debug for project 001Add ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:65:23: warning: unused variable 'pData3' [-Wunused-variable]
+  uint8_t const *const pData3 = (uint8_t*)0x40000000;
+                       ^~~~~~
+arm-none-eabi-gcc -o "001Add.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Tyson\Documents\Embedded_Curse1\001Add\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001Add.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 001Add.elf
+ 
+arm-none-eabi-objdump -h -S  001Add.elf  > "001Add.list"
+arm-none-eabi-objcopy  -O binary  001Add.elf  "001Add.bin"
+arm-none-eabi-size   001Add.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5224	    116	   1588	   6928	   1b10	001Add.elf
+Finished building: 001Add.list
+Finished building: 001Add.bin
+Finished building: default.size.stdout
+ 
+ 
+ 
+
+15:34:31 Build Finished. 0 errors, 1 warnings. (took 5s.486ms)
+

@@ -1,0 +1,61 @@
+Address of the clock control register (AHB1ENR)
+
+baseAddress + AddressOffset ==> 0x40023800 + 0x30 = 0x40023830  ==> Used to activate the clk
+
+Address of the GPIOA mode register (used to control mode)
+
+0x40020000 + 0x00 = 0x40020000  ==> select the mode (input/output)
+
+Address of the GPIOA output data register (used to write)
+
+0x40020000 + 0x14 = 40020014  ==> make the LED high
+
+
+////////////////////////////////// interview queston//////////////////////////////////////////
+#include <stdio.h>
+
+/*
+Given an unsorted array, count all unique elements in it.
+
+Examples:
+
+Input : arr[] = {10, 20, 20, 10, 30, 10}
+Output : 3
+There are three unique elements 10, 20 and 30.
+
+Input : arr[] = {10, 20, 20, 10, 20}
+Output : 2
+*/
+
+int count_elements(int *ptr, int number_elements)
+{
+    printf("%d\n", ptr[number_elements - 1]);  
+    int elements = 0;
+    
+    for(int i = 0; i < number_elements; ++i)
+    {
+        if(ptr[i] != ptr[number_elements - i])
+          elements++;
+        for (int j = i + 1; j < number_elements -1; ++j)
+        {
+         if(ptr[i] == ptr[j])
+            break;  
+        
+        }
+       
+    }
+    
+    printf("%d\n", elements);   
+    return elements;
+}
+
+
+int main(void)
+{
+    int arr[] = { 12, 10, 9, 45, 2, 10, 10, 45 };
+    //Fill
+    int nsize = sizeof(arr) / sizeof(int);
+    int elements = count_elements(arr, nsize);
+    printf("Output: %d\n",elements );
+    return 0;
+}

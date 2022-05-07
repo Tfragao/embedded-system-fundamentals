@@ -1,0 +1,10 @@
+13:55:53 **** Incremental Build of configuration Debug for project 002Pointers ****
+make -j12 all 
+arm-none-eabi-size   002Pointers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5384	    108	   1580	   7072	   1ba0	002Pointers.elf
+Finished building: default.size.stdout
+ 
+
+13:55:54 Build Finished. 0 errors, 0 warnings. (took 1s.255ms)
+

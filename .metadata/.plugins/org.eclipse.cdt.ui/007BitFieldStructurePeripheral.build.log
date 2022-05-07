@@ -1,0 +1,10 @@
+16:56:20 **** Incremental Build of configuration Debug for project 007BitFieldStructurePeripheral ****
+make -j12 all 
+arm-none-eabi-size   007BitFieldStructurePeripheral.elf 
+   text	   data	    bss	    dec	    hex	filename
+    868	      8	   1568	   2444	    98c	007BitFieldStructurePeripheral.elf
+Finished building: default.size.stdout
+ 
+
+16:56:21 Build Finished. 0 errors, 0 warnings. (took 1s.148ms)
+

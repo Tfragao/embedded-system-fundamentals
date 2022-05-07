@@ -1,0 +1,24 @@
+/*
+ ============================================================================
+ Name        : Arrays.c
+ Author      : Taison
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include<stdint.h>
+
+int main(void)
+{
+	uint8_t someData[10] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
+
+	for(uint8_t count = 0; count < 10; ++count)
+	{
+		printf("Are values stored are : %d", someData[count]);
+	}
+    printf("\n");
+	return EXIT_SUCCESS;
+}
